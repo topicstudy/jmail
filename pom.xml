@@ -11,20 +11,11 @@
 
     <distributionManagement>
         <repository>
-            <id>ssh-repository</id>
-            <url>https://gitee.com/smlt_1_wjh_q/${project.artifactId}/raw/master/repository</url>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/luotuoshamo/jmail</url>
         </repository>
     </distributionManagement>
-    <build>
-        <extensions>
-            <!-- Enabling the use of SSH -->
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh-external</artifactId>
-                <version>1.0-beta-6</version>
-            </extension>
-        </extensions>
-    </build>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
