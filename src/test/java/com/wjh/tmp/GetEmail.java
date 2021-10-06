@@ -6,6 +6,9 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Properties;
 
+/**
+ * 收邮件
+ */
 public class GetEmail {
     public static void main(String[] args) throws Exception {
         Session session = Session.getInstance(new Properties());

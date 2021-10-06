@@ -13,7 +13,7 @@ public class Mail {
 
     // 收件人，必填
     private List<MailAddress> recipientList;
-    private Address[] recipientAddresses;// 内容和recipientList一样
+    private Address[] recipientAddresses;// 内容和recipientList一样,调用者只用设置recipientList
 
     // 主题，必填
     private String subject;

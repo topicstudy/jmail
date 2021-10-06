@@ -1,7 +1,5 @@
 package com.wjh.mail.entity;
 
-import com.wjh.mail.common.MailConstant;
-
 /**
  * 发件人
  */
@@ -9,7 +7,7 @@ public class MailSender {
     // 发件人邮箱地址
     private MailAddress mailAddress;
 
-    // 发件人邮箱密码、授权码
+    // 发件人邮箱授权码
     private String pwd;
 
     // 发件人邮箱的SMTP服务器地址，例如：smtp.sohu.com
@@ -18,15 +16,20 @@ public class MailSender {
     // 发件人邮箱的SMTP服务器端口，默认25
     private Integer smtpPort = 25;
 
-    public MailSender(MailAddress mailAddress, String pwd){
+    public MailSender(MailAddress mailAddress, String pwd, String smtp, Integer smtpPort) {
         this.mailAddress = mailAddress;
         this.pwd = pwd;
-
-        String company = mailAddress.getEmailCompany();
-        this.smtp = MailConstant.SMTP_MAP.get(company);
-        this.smtpPort = MailConstant.SMTP_PORT_MAP.get(company);
+        this.smtp = smtp;
+        this.smtpPort = smtpPort;
     }
 
+    public MailSender(MailAddress mailAddress, String pwd) {
+        this.mailAddress = mailAddress;
+        this.pwd = pwd;
+    }
+
+    public MailSender() {
+    }
 
     public MailAddress getMailAddress() {
         return mailAddress;
@@ -58,5 +61,15 @@ public class MailSender {
 
     public void setSmtpPort(Integer smtpPort) {
         this.smtpPort = smtpPort;
+    }
+
+    @Override
+    public String toString() {
+        return "MailSender{" +
+                "mailAddress=" + mailAddress +
+                ", pwd='" + pwd + '\'' +
+                ", smtp='" + smtp + '\'' +
+                ", smtpPort=" + smtpPort +
+                '}';
     }
 }

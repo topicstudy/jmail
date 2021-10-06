@@ -7,7 +7,7 @@
     <groupId>com.wjh</groupId>
     <artifactId>jmail</artifactId>
     <version>1.0.0</version>
-    <description>Java发邮件</description>
+    <description>Java邮件</description>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
