@@ -9,14 +9,6 @@
     <version>1.0.0</version>
     <description>Java邮件</description>
 
-    <!--    <distributionManagement>-->
-    <!--        <repository>-->
-    <!--            <id>github</id>-->
-    <!--            <name>GitHub OWNER Apache Maven Packages</name>-->
-    <!--            <url>https://maven.pkg.github.com/luotuoshamo/jmail</url>-->
-    <!--        </repository>-->
-    <!--    </distributionManagement>-->
-
     <distributionManagement>
         <repository>
             <id>local-repo-release</id>
@@ -50,9 +42,4 @@
             <version>1.0.0</version>
         </dependency>
     </dependencies>
-
-    <build>
-
-    </build>
-
 </project>

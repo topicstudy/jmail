@@ -4,14 +4,19 @@
 
 # 使用
 
-* 添加依赖
+* pom.xml中添加依赖
 
 ```xml
 <repositories>
     <repository>
-        <id>github</id>
+        <id>jmail</id>
         <name>GitHub OWNER Apache Maven Packages</name>
-        <url>https://maven.pkg.github.com/luotuoshamo/jmail</url>
+        <url>https://luotuoshamo.github.io/jmail/maven-repo/</url>
+    </repository>
+    <repository>
+        <id>jutil</id>
+        <name>GitHub OWNER Apache Maven Packages</name>
+        <url>https://luotuoshamo.github.io/jutil/maven-repo/</url>
     </repository>
 </repositories>
 <dependencies>
@@ -22,6 +27,8 @@
     </dependency>
 </dependencies>
 ```
+
+>加入上面的配置后刷新Maven还是爆红，可以`mvn install`一下；如果还是爆红需要重启IDEA
 
 * 示例-发简单邮件
 
@@ -87,7 +94,7 @@ mail.setHtml("【新浪】验证码是1234，不可告诉任何人！");
       attachments.add(new File(pathPrefix + "a2.txt"));
       
       Mail mail = new Mail();
-    mail.setSender(sender);
+      mail.setSender(sender);
       mail.setRecipientList(recipientList);
       mail.setSubject("搜狐测试主题-完整邮件");
       mail.setHtml("<h1>1a汉字</h1><img src='p1.png'><img src='p2.png'>");
