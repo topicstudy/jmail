@@ -13,7 +13,7 @@ public class GetEmail {
     public static void main(String[] args) throws Exception {
         Session session = Session.getInstance(new Properties());
         Store store = session.getStore("pop3");
-        store.connect("pop3.sohu.com", 110, "wjhshm", "30RPATSOCLJ61");
+        store.connect("pop3.sohu.com", 110, "wjh", "30RPATSOCLJ61");
         Folder folder = store.getFolder("inbox");
         folder.open(Folder.READ_ONLY);
 

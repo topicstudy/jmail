@@ -21,13 +21,13 @@ public class MailUtilTest {
 
 
     public void setUp() throws Exception {
-        sender.setMailAddress(new MailAddress("wjhshm@sohu.com", "搜狐测试发送者"));//TODO
-        sender.setPwd("CAISHXWTQ0");//TODO
+        sender.setMailAddress(new MailAddress("wjh@sohu.com", "搜狐测试发送者"));//TODO
+        sender.setPwd("ABCDEFGH");//TODO
         sender.setSmtp("smtp.sohu.com");
         sender.setSmtpPort(25);
 
-        recipientList.add(new MailAddress("wjh3493@qq.com", "接收者3493"));// TODO
-        recipientList.add(new MailAddress("wjhtesthelper@163.com", "接收者163"));//TODO
+        recipientList.add(new MailAddress("song@qq.com", "接收者3493"));// TODO
+        recipientList.add(new MailAddress("wjh@163.com", "接收者163"));//TODO
     }
 
     public void tearDown() throws Exception {
