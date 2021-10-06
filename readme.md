@@ -28,7 +28,7 @@
 </dependencies>
 ```
 
->加入上面的配置后刷新Maven还是爆红，可以`mvn install`一下；如果还是爆红需要重启IDEA
+>加入上面的配置后`mvn install`一下；如果还是爆红需要重启IDEA
 
 * 示例-发简单邮件
 
