@@ -1,6 +1,6 @@
 # 介绍
 
-该应用用于发邮件
+jmail用于发邮件, 基于JDK1.8和javax.mail 1.6.2
 
 # 使用
 
@@ -11,12 +11,12 @@
     <repository>
         <id>jmail</id>
         <name>GitHub OWNER Apache Maven Packages</name>
-        <url>https://luotuoshamo.github.io/jmail/maven-repo/</url>
+        <url>https://topicstudy.github.io/jmail/maven-repo/</url>
     </repository>
     <repository>
         <id>jutil</id>
         <name>GitHub OWNER Apache Maven Packages</name>
-        <url>https://luotuoshamo.github.io/jutil/maven-repo/</url>
+        <url>https://topicstudy.github.io/jutil/maven-repo/</url>
     </repository>
 </repositories>
 <dependencies>
@@ -58,7 +58,7 @@ mail.setHtml("【新浪】验证码是1234，不可告诉任何人！");
 
 * 示例-发完整邮件
 
-  完整邮件：邮件内容有文本、图片和附件，即邮件内容是完整的
+  完整邮件：邮件内容有文本、图片和附件，即邮件内容结构是完整的
 
   ```java
   // 发送
