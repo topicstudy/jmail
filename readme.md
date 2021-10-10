@@ -1,6 +1,16 @@
-# 介绍
+介绍
 
-jmail用于发邮件, 基于JDK1.8和javax.mail 1.6.2
+jmail用于发邮件
+
+# 依赖
+
+| 依赖       | 版本  | maven自动下载依赖 |
+| ---------- | ----- | ----------------- |
+| JDK        | 1.8   | N                 |
+| javax.mail | 1.6.2 | Y                 |
+| jutil      | 1.0.0 | Y                 |
+
+
 
 # 使用
 
@@ -12,11 +22,6 @@ jmail用于发邮件, 基于JDK1.8和javax.mail 1.6.2
         <id>jmail</id>
         <name>GitHub OWNER Apache Maven Packages</name>
         <url>https://topicstudy.github.io/jmail/maven-repo/</url>
-    </repository>
-    <repository>
-        <id>jutil</id>
-        <name>GitHub OWNER Apache Maven Packages</name>
-        <url>https://topicstudy.github.io/jutil/maven-repo/</url>
     </repository>
 </repositories>
 <dependencies>
