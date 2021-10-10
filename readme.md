@@ -4,11 +4,11 @@ jmail用于发邮件
 
 # 依赖
 
-| 依赖       | 版本  | maven自动下载依赖 |
-| ---------- | ----- | ----------------- |
-| JDK        | 1.8   | N                 |
-| javax.mail | 1.6.2 | Y                 |
-| jutil      | 1.0.0 | Y                 |
+| 依赖       | 版本  | maven自动下载依赖，Maven自动下载,使用使无需手动添加 |
+| ---------- | ----- | --------------------------------------------------- |
+| JDK        | 1.8   | N                                                   |
+| javax.mail | 1.6.2 | Y                                                   |
+| jutil      | 1.0.0 | Y                                                   |
 
 
 
@@ -34,6 +34,8 @@ jmail用于发邮件
 ```
 
 >加入上面的配置后`mvn install`一下；如果还是爆红需要重启IDEA
+>
+>如果`mvn install`失败过，请删掉本地maven仓库中安装失败的项目，在执行`mvn 
 
 * 示例-发简单邮件
 
@@ -120,5 +122,12 @@ mail.setHtml("【新浪】验证码是1234，不可告诉任何人！");
 | 搜狐邮箱 | smtp.sohu.com | 25       |
 | QQ邮箱   | smtp.qq.com   | 25       |
 
+  # 联系我
 
+| 微信   | topicstudy                    |
+| ------ | ----------------------------- |
+| Gitee  | https://gitee.com/topicstudy  |
+| Github | https://github.com/topicstudy |
+
+  
 
