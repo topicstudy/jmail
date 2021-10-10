@@ -7,7 +7,7 @@
     <groupId>com.wjh</groupId>
     <artifactId>jmail</artifactId>
     <version>1.0.0</version>
-    <description>Java邮件</description>
+    <description>Java发邮件</description>
 
     <distributionManagement>
         <repository>
@@ -21,6 +21,14 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>jutil</id>
+            <name>github repository</name>
+            <url>https://topicstudy.github.io/jutil/maven-repo/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>

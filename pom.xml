@@ -29,6 +29,7 @@
             <url>https://topicstudy.github.io/jutil/maven-repo/</url>
         </repository>
     </repositories>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
