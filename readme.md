@@ -3,16 +3,11 @@
 jmail用于发邮件
 
 # 依赖
-
-| 依赖       | 版本  | maven自动下载依赖，Maven自动下载,使用使无需手动添加 |
-| ---------- | ----- | --------------------------------------------------- |
-| JDK        | 1.8   | N                                                   |
-| javax.mail | 1.6.2 | Y                                                   |
-| jutil      | 1.0.0 | Y                                                   |
+javax.mail >=1.6.2
 
 
 
-# 使用
+# 如何使用
 
 * pom.xml中添加依赖
 
@@ -121,13 +116,6 @@ mail.setHtml("【新浪】验证码是1234，不可告诉任何人！");
 | -------- | ------------- | -------- |
 | 搜狐邮箱 | smtp.sohu.com | 25       |
 | QQ邮箱   | smtp.qq.com   | 25       |
-
-  # 联系我
-
-| 微信   | topicstudy                    |
-| ------ | ----------------------------- |
-| Gitee  | https://gitee.com/topicstudy  |
-| Github | https://github.com/topicstudy |
 
   
 
