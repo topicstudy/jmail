@@ -1,7 +1,7 @@
-package com.wjh.mail;
+package cn.topicstudy.mail;
 
-import com.wjh.mail.entity.Mail;
-import com.wjh.mail.entity.MailSender;
+import cn.topicstudy.mail.entity.Mail;
+import cn.topicstudy.mail.entity.MailSender;
 
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;

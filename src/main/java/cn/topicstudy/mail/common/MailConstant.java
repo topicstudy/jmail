@@ -1,6 +1,6 @@
-package com.wjh.mail.common;
+package cn.topicstudy.mail.common;
 
-import com.wjh.basic.text.StringUtil;
+import cn.topicstudy.basic.text.StringUtil;
 
 import java.io.File;
 import java.util.HashMap;

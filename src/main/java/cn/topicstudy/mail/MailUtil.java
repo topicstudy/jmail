@@ -1,9 +1,9 @@
-package com.wjh.mail;
+package cn.topicstudy.mail;
 
-import com.wjh.basic.text.StringUtil;
-import com.wjh.mail.common.Constant;
-import com.wjh.mail.entity.Mail;
-import com.wjh.mail.entity.MailSender;
+import cn.topicstudy.basic.text.StringUtil;
+import cn.topicstudy.mail.common.Constant;
+import cn.topicstudy.mail.entity.Mail;
+import cn.topicstudy.mail.entity.MailSender;
 
 import javax.mail.Message;
 import javax.mail.Session;

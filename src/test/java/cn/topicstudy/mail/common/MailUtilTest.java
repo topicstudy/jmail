@@ -1,9 +1,9 @@
-package com.wjh.mail.common;
+package cn.topicstudy.mail.common;
 
-import com.wjh.mail.MailUtil;
-import com.wjh.mail.entity.Mail;
-import com.wjh.mail.entity.MailAddress;
-import com.wjh.mail.entity.MailSender;
+import cn.topicstudy.mail.MailUtil;
+import cn.topicstudy.mail.entity.Mail;
+import cn.topicstudy.mail.entity.MailAddress;
+import cn.topicstudy.mail.entity.MailSender;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.wjh.mail.entity;
+package cn.topicstudy.mail.entity;
 
 public class MailAddress {
     // 邮箱地址，例如：zxj@qq.com

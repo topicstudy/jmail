@@ -1,4 +1,4 @@
-package com.wjh.mail.common;
+package cn.topicstudy.mail.common;
 
 public interface Constant {
 

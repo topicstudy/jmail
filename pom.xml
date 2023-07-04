@@ -4,31 +4,139 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.wjh</groupId>
+    <!--project meta info, required by sonatype-->
+    <groupId>io.github.topicstudy</groupId>
     <artifactId>jmail</artifactId>
-    <version>1.0.0</version>
-    <description>Java发邮件</description>
+    <version>1.1.1</version>
+    <name>io.github.topicstudy:jmail</name>
+    <packaging>jar</packaging>
+    <description>send Email by Java</description>
+    <url>http://github.com/topicstudy/jmail</url>
 
-    <distributionManagement>
-        <repository>
-            <id>local-repo-release</id>
-            <name>GitHub Release</name>
-            <url>file://${project.basedir}/maven-repo</url>
-        </repository>
-    </distributionManagement>
+    <organization>
+        <name>topicstudy</name>
+        <url>http://topicstudy.cn</url>
+    </organization>
 
     <properties>
+        <charset>UTF-8</charset>
+        <javaVersion>1.8</javaVersion>
+        <gpgKeyName>0x143D3FFA</gpgKeyName>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
-    <repositories>
+    <!--required by sonatype-->
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <!--required by sonatype，format as ${project.groupId} can not be parsed by sonatype-->
+    <scm>
+        <connection>scm:git:git@github.com:topicstudy/jhttp.git</connection>
+        <developerConnection>scm:git:git@github.com:topicstudy/jhttp.git</developerConnection>
+        <url>git@github.com:topicstudy/jhttp.git</url>
+    </scm>
+
+    <!--required by sonatype-->
+    <developers>
+        <developer>
+            <name>topicstudy</name>
+            <email>topicstudy@163.com</email>
+            <url>http://topicstudy.cn</url>
+        </developer>
+    </developers>
+
+    <build>
+        <plugins>
+            <!--mvn basic plugin-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>${javaVersion}</source>
+                    <target>${javaVersion}</target>
+                    <encoding>${charset}</encoding>
+                </configuration>
+            </plugin>
+
+            <!--to generate signature file (.asc) for packaging results which will upload to the central repository,
+            required by sonatype-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <configuration>
+                            <!--If there are multiple gpg keys, the keyname be specified,
+                            list keyname by: gpg {dash x2} list-signatures {dash x2}keyid-format 0xshort
+                            the sig3 is keyname-->
+                            <keyname>${gpgKeyName}</keyname>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--to package out the source (artifactId-version-sources.jar), required by sonatype-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--to package out the javadoc (artifactId-version-javadoc.jar), required by sonatype-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <charset>${charset}</charset>
+                    <encoding>${charset}</encoding>
+                    <excludePackageNames>cn.topicstudy</excludePackageNames>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <distributionManagement>
+        <!--sonatype start-->
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>jutil</id>
-            <name>github repository</name>
-            <url>https://topicstudy.github.io/jutil/maven-repo/</url>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-    </repositories>
+        <!--sonatype end-->
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -45,9 +153,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.wjh</groupId>
+            <groupId>io.github.topicstudy</groupId>
             <artifactId>jutil</artifactId>
-            <version>1.0.0</version>
+            <version>2.0.0</version>
         </dependency>
     </dependencies>
 </project>

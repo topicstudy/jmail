@@ -1,4 +1,4 @@
-package com.wjh.mail.entity;
+package cn.topicstudy.mail.entity;
 
 import javax.mail.Address;
 import javax.mail.internet.AddressException;

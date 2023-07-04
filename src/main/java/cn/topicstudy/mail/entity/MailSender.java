@@ -1,4 +1,4 @@
-package com.wjh.mail.entity;
+package cn.topicstudy.mail.entity;
 
 /**
  * 发件人
