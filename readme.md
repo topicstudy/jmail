@@ -6,31 +6,17 @@ jmail用于发邮件
 javax.mail >=1.6.2
 
 
-
 # 如何使用
 
 * pom.xml中添加依赖
-
 ```xml
-<repositories>
-    <repository>
-        <id>jmail</id>
-        <name>GitHub OWNER Apache Maven Packages</name>
-        <url>https://topicstudy.github.io/jmail/maven-repo/</url>
-    </repository>
-</repositories>
-<dependencies>
-    <dependency>
-        <groupId>com.wjh</groupId>
-        <artifactId>jmail</artifactId>
-        <version>1.0.0</version>
-    </dependency>
-</dependencies>
+<dependency>
+    <groupId>io.github.topicstudy</groupId>
+    <artifactId>jmail</artifactId>
+    <version>RELEASE</version>
+</dependency>
 ```
 
->加入上面的配置后`mvn install`一下；如果还是爆红需要重启IDEA
->
->如果`mvn install`失败过，请删掉本地maven仓库中安装失败的项目，在执行`mvn 
 
 * 示例-发简单邮件
 
@@ -107,8 +93,7 @@ mail.setHtml("【新浪】验证码是1234，不可告诉任何人！");
   }
   
   ```
-  
-  
+
 
 # 常用邮件商
 
