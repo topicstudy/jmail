@@ -1,10 +1,13 @@
 package cn.topicstudy.mail.common;
 
 import cn.topicstudy.mail.MailUtil;
+import cn.topicstudy.mail.common.enums.SmtpServerEnum;
 import cn.topicstudy.mail.entity.Mail;
 import cn.topicstudy.mail.entity.MailAddress;
 import cn.topicstudy.mail.entity.MailSender;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
@@ -20,16 +23,18 @@ public class MailUtilTest {
     private static List<MailAddress> recipientList = new ArrayList();
 
 
+//    @Before
     public void setUp() throws Exception {
-        sender.setMailAddress(new MailAddress("wjh@sohu.com", "搜狐测试发送者"));//TODO
-        sender.setPwd("ABCDEFGH");//TODO
-        sender.setSmtp("smtp.sohu.com");
-        sender.setSmtpPort(25);
+        sender.setMailAddress(new MailAddress("topicstudy@163.com", "发送者NICK"));//TODO
+        sender.setPwd("ABCDEFG");//TODO
+        sender.setSmtp(SmtpServerEnum.NETEASE.getServerAddress());
+        sender.setSmtpPort(SmtpServerEnum.NETEASE.getServerPort());
 
-        recipientList.add(new MailAddress("song@qq.com", "接收者3493"));// TODO
-        recipientList.add(new MailAddress("wjh@163.com", "接收者163"));//TODO
+        recipientList.add(new MailAddress("ccc@qq.com", "接收者123"));// TODO
+        recipientList.add(new MailAddress("ddd@163.com", "接收者163"));//TODO
     }
 
+    @After
     public void tearDown() throws Exception {
     }
 
@@ -42,14 +47,14 @@ public class MailUtilTest {
     public void testSaveEmail() {
     }
 
-    // @Test
+     @Test
     public void testSend() throws Exception {
         MailUtil.send(createSimpleMail());
     }
 
-    // @Test
+     @Test
     public void testSend2() throws Exception {
-        MailUtil.send(createCompleteMail());
+         MailUtil.send(createCompleteMail());
     }
 
     /**

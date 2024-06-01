@@ -7,7 +7,7 @@
     <!--project meta info, required by sonatype-->
     <groupId>io.github.topicstudy</groupId>
     <artifactId>jmail</artifactId>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
     <name>io.github.topicstudy:jmail</name>
     <packaging>jar</packaging>
     <description>send Email by Java</description>

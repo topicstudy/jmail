@@ -29,37 +29,45 @@ public class MailUtil {
      *
      * @param absolutePath 绝对路径
      */
-    public static void saveEmail(Message mail, String absolutePath) throws Exception {
-        FileOutputStream fos = new FileOutputStream(absolutePath);
-        mail.writeTo(fos);
-        fos.close();
-        if (fos != null) fos.close();
+    public static void saveEmail(Message mail, String absolutePath) {
+        try {
+            FileOutputStream fos = new FileOutputStream(absolutePath);
+            mail.writeTo(fos);
+            fos.close();
+            if (fos != null) fos.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
      * 发邮件
      */
-    public static void send(Mail mail) throws Exception {
-        // 创建邮件
-        MailFactory mailFactory = new MailFactory();
-        Session session = Session.getInstance(new Properties());
-        session.setDebug(Constant.IS_DEV);
-        Message message = mailFactory.createEmail(mail, session);
-        if (Constant.NEED_BACKUP && StringUtil.isNotBlank(Constant.BACKUP_MAIL_PATH)) {
-            MailUtil.saveEmail(message, Constant.BACKUP_MAIL_PATH);
-        }
+    public static void send(Mail mail) {
+        try {
+            // 创建邮件
+            MailFactory mailFactory = new MailFactory();
+            Session session = Session.getInstance(new Properties());
+            session.setDebug(Constant.IS_DEV);
+            Message message = mailFactory.createEmail(mail, session);
+            if (Constant.NEED_BACKUP && StringUtil.isNotBlank(Constant.BACKUP_MAIL_PATH)) {
+                MailUtil.saveEmail(message, Constant.BACKUP_MAIL_PATH);
+            }
 
-        // 发邮件
-        Transport transport = session.getTransport();
-        MailSender sender = mail.getSender();
-        // 邮件客户端连smtp服务器
-        transport.connect(
-                sender.getSmtp(),
-                sender.getSmtpPort(),
-                sender.getMailAddress().getName(),// 例如：zxj@qq.com中的zxj
-                sender.getPwd()
-        );
-        transport.sendMessage(message, mail.getRecipientAddresses());
-        transport.close();
+            // 发邮件
+            Transport transport = session.getTransport();
+            MailSender sender = mail.getSender();
+            // 邮件客户端连smtp服务器
+            transport.connect(
+                    sender.getSmtp(),
+                    sender.getSmtpPort(),
+                    sender.getMailAddress().getName(),// 例如：zxj@qq.com中的zxj
+                    sender.getPwd()
+            );
+            transport.sendMessage(message, mail.getRecipientAddresses());
+            transport.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
