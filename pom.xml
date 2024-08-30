@@ -7,7 +7,7 @@
     <!--project meta info, required by sonatype-->
     <groupId>io.github.topicstudy</groupId>
     <artifactId>jmail</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <name>io.github.topicstudy:jmail</name>
     <packaging>jar</packaging>
     <description>send Email by Java</description>
@@ -155,7 +155,7 @@
         <dependency>
             <groupId>io.github.topicstudy</groupId>
             <artifactId>jutil</artifactId>
-            <version>2.0.0</version>
+            <version>3.3.1</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,6 +1,7 @@
 package cn.topicstudy.mail.common;
 
-import cn.topicstudy.basic.text.StringUtil;
+
+import cn.topicstudy.jutil.basic.text.StringUtil;
 
 import java.io.File;
 import java.util.HashMap;

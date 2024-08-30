@@ -1,6 +1,6 @@
 package cn.topicstudy.mail;
 
-import cn.topicstudy.basic.text.StringUtil;
+import cn.topicstudy.jutil.basic.text.StringUtil;
 import cn.topicstudy.mail.common.Constant;
 import cn.topicstudy.mail.entity.Mail;
 import cn.topicstudy.mail.entity.MailSender;
